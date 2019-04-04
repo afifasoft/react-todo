@@ -32,6 +32,8 @@
     "expect": "^1.14.0",
     "foundation-sites": "^6.2.0",
     "jquery": "^2.2.1",
+    "material-ui": "^0.20.2",
+    "moment": "^2.12.0",
     "node-sass": "^4.11.0",
     "node-uuid": "^1.4.8",
     "react-addons-test-utils": "^0.14.7",

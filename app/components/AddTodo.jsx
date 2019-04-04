@@ -1,5 +1,6 @@
 var React = require('react');
 
+
 var AddTodo = React.createClass({
 
   handleSubmit: function (e) {
@@ -19,8 +20,9 @@ var AddTodo = React.createClass({
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" ref="todoText" placeholder="What do you need to do"/>
-        
+          
           <button className="button expanded">Add Todo</button>
+
         </form>
       </div>
     );
