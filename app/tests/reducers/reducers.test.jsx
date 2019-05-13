@@ -1,4 +1,5 @@
 var expect = require('expect');
+var df = require('deep-freeze-strict');
 
 var reducers = require('reducers');
 
@@ -10,7 +11,7 @@ describe('Reducers', () => {
         serachText: 'dog'
       };
 
-      var res = reducers.searchTextReducer('',action);
+      var res = reducers.searchTextReducer(df(''),df(action));
       expect(res).toEqual(action.searchText);
     });
   });
@@ -23,7 +24,7 @@ describe('Reducers', () => {
         type: 'TOGGLE_SHOW_COMPLETED'
       };
 
-      var res = reducers.showCompletedReducer(false, action);
+      var res = reducers.showCompletedReducer(df(false), df(action));
       expect(res).toEqual(true);
     });
   });
