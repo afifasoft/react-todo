@@ -1,7 +1,7 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-
-var TodoSearch = React.createClass({
+var TodoSearch = createReactClass({
 
   handleSearch: function (){
     var showCompleted = this.refs.showCompleted.checked;

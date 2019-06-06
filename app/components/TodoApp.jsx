@@ -1,5 +1,5 @@
 var React = require('react');
-
+var createReactClass = require('create-react-class');
 
 import TodoList from 'TodoList';
 
@@ -10,7 +10,7 @@ var uuid = require('node-uuid');
 
 var moment = require('moment');
 
-var TodoApp = React.createClass({
+var TodoApp = createReactClass({
   getInitialState : function () {
 
     return {

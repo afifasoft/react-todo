@@ -1,7 +1,7 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-
-var AddTodo = React.createClass({
+var AddTodo = createReactClass({
 
   handleSubmit: function (e) {
     e.preventDefault();

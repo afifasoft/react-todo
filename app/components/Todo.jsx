@@ -2,8 +2,9 @@ var React = require('react');
 var {connect} = require('react-redux');
 var moment = require('moment');
 var actions = require('actions');
+var createReactClass = require('create-react-class');
 
-export var Todo = React.createClass({
+export var Todo = createReactClass({
   render: function () {
     var {id, text, completed, createdAt, completedAt,dispatch} = this.props;
     var todoClassName = completed ? 'todo todo-completed' : 'todo'
