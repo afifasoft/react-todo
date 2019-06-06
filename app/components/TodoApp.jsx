@@ -2,8 +2,8 @@ var React = require('react');
 var createReactClass = require('create-react-class');
 
 import TodoList from 'TodoList';
+import AddTodo from 'AddTodo';
 
-var AddTodo = require('AddTodo');
 var TodoSearch = require('TodoSearch');
 var TodoAPI = require('TodoAPI');
 var uuid = require('node-uuid');
