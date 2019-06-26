@@ -11,6 +11,39 @@ var firebaseConfig = {
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
- firebase.database().ref().set({
-   appName: 'My Task'
+
+ var firebaseRef = firebase.database().ref();
+ firebaseRef.set({
+   app: {
+     name: 'My Task',
+     version: '1.0.0'
+   },
+   isRunning: true,
+   user: {
+     name: 'atif',
+     age: 26
+   }
+ }).then(() => {
+    console.log('Set worked');
+ }, (e) => {
+   console.log('Set failed');
  })
+
+  // firebaseRef.set({
+  //   appName: 'My New Task App'
+  //
+  // });
+
+  firebaseRef.child('user').set({
+    name: 'Harshith'
+  });
+
+  firebaseRef.child('app').set({
+    name: 'My New Task'
+  })
+
+
+ // firebaseRef.set({
+ //   appName: 'My Task'
+ //
+ // });
