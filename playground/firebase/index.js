@@ -23,25 +23,50 @@ var firebaseConfig = {
      name: 'atif',
      age: 26
    }
- }).then(() => {
-    console.log('Set worked');
- }, (e) => {
-   console.log('Set failed');
- })
+ });
+
+
+//
+// firebaseRef.update({
+//   'app/name': 'My New Task',
+//   'user/name': 'Harshith'
+// });
+
+firebaseRef.child('app').update({
+  name: 'My latest Task',
+}).then(() => {
+  console.log('Update success: app');
+}, (e) => {
+  console.log('Update failed: app');
+})
+
+firebaseRef.child('user').update({
+  name:'Harish'
+}).then(() => {
+  console.log('Update success: user');
+}, (e) => {
+  console.log('Update failed: user');
+})
+
+
+ // firebaseRef.update({
+ //   isRunning: false,
+ //   'app/name': 'My New Task App'
+ //
+ // });
+
+ // firebaseRef.child('app').update({
+ //   name: 'My New Task App'
+ // }).then(() => {
+ //   console.log('Update worked');
+ // }, (e) => {
+ //   console.log('Update failed');
+ // });
 
   // firebaseRef.set({
   //   appName: 'My New Task App'
   //
   // });
-
-  firebaseRef.child('user').set({
-    name: 'Harshith'
-  });
-
-  firebaseRef.child('app').set({
-    name: 'My New Task'
-  })
-
 
  // firebaseRef.set({
  //   appName: 'My Task'
