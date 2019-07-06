@@ -48,6 +48,22 @@ firebaseRef.child('user').update({
   console.log('Update failed: user');
 })
 
+// firebaseRef.remove();
+
+//  firebaseRef.child('app/name').remove();
+
+  // firebaseRef.child('app').update({
+  //   version: '2.0.0',
+  //   name: null
+  // });
+
+  firebaseRef.update({
+    isRunning: null,
+  });
+
+  firebaseRef.child('user/age').remove();
+
+
 
  // firebaseRef.update({
  //   isRunning: false,
