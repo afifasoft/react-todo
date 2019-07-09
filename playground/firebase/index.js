@@ -25,6 +25,30 @@ var firebaseConfig = {
    }
  });
 
+var logData = (snapshot) => {
+  console.log('Got value', snapshot.val());
+};
+
+firebaseRef.on('value',logData);
+
+firebaseRef.off();
+
+firebaseRef.update({
+  isRunning: false
+});
+
+
+// firebaseRef.once('value').then((snapshot) => {
+//   console.log('Got entire database',snapshot.val());
+// }, (error) => {
+//     console.log('Unable to fetch value',error);
+// });
+//
+// firebaseRef.child('app').once('value').then((snapshot) => {
+//   console.log('sub database :',snapshot.key, snapshot.val());
+// }, (error) => {
+//     console.log('Unable to fetch value',error);
+// });
 
 //
 // firebaseRef.update({
@@ -32,21 +56,21 @@ var firebaseConfig = {
 //   'user/name': 'Harshith'
 // });
 
-firebaseRef.child('app').update({
-  name: 'My latest Task',
-}).then(() => {
-  console.log('Update success: app');
-}, (e) => {
-  console.log('Update failed: app');
-})
+// firebaseRef.child('app').update({
+//   name: 'My latest Task',
+// }).then(() => {
+//   console.log('Update success: app');
+// }, (e) => {
+//   console.log('Update failed: app');
+// })
 
-firebaseRef.child('user').update({
-  name:'Harish'
-}).then(() => {
-  console.log('Update success: user');
-}, (e) => {
-  console.log('Update failed: user');
-})
+// firebaseRef.child('user').update({
+//   name:'Harish'
+// }).then(() => {
+//   console.log('Update success: user');
+// }, (e) => {
+//   console.log('Update failed: user');
+// })
 
 // firebaseRef.remove();
 
@@ -57,11 +81,11 @@ firebaseRef.child('user').update({
   //   name: null
   // });
 
-  firebaseRef.update({
-    isRunning: null,
-  });
+  // firebaseRef.update({
+  //   isRunning: null,
+  // });
 
-  firebaseRef.child('user/age').remove();
+//  firebaseRef.child('user/age').remove();
 
 
 

@@ -3,6 +3,8 @@ var createReactClass = require('create-react-class');
 var {connect} = require('react-redux');
 var actions = require('actions');
 
+import Button from '@material-ui/core/Button';
+
 export var AddTodo = createReactClass({
 
   handleSubmit: function (e) {
@@ -27,7 +29,7 @@ export var AddTodo = createReactClass({
           <input type="text" ref="todoText" placeholder="What do you need to do"/>
 
           <button className="button expanded">Create Task</button>
-
+          <Button variant="contained" color="primary">Click</Button>
         </form>
       </div>
     );
