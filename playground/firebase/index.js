@@ -22,21 +22,64 @@ var firebaseConfig = {
    user: {
      name: 'atif',
      age: 26
-   }
+   },
+   // array in firebase
+   // todos: {
+   //    '123bacds' : {
+   //     text: 'Film'
+   //   }
+   // }
  });
 
- firebaseRef.child('user').on('value', (snapshot) => {
-   console.log('User ref changed', snapshot.val());
+
+ var todosRef = firebaseRef.child('todos');
+
+ todosRef.on('child_added', (snapshot) => {
+   console.log('New todo added', snapshot.key, snapshot.val());
  });
 
-
- firebaseRef.child('user').update({
-   name: 'Harshith'
+ todosRef.push({
+   text: 'Todo 1'
  });
 
- firebaseRef.child('app').update({
-   name: 'My New Task'
+ todosRef.push({
+   text: 'Todo 2'
  });
+
+ // var notesRef = firebaseRef.child('notes');
+ //
+ // notesRef.on('child_added', (snapshot) => {
+ //   console.log('child_added', snapshot.key);
+ // });
+ //
+ // notesRef.on('child_changed', (snapshot) => {
+ //   console.log('child_changed', snapshot.key);
+ // });
+ //
+ // notesRef.on('child_removed', (snapshot) => {
+ //   console.log('child_removed', snapshot.key);
+ // });
+ //
+ // var newNoteRef = notesRef.push();
+ //
+ // newNoteRef.set({
+ //   text: 'Walk the dog'
+ // });
+ //
+ // console.log('My task id: ', newNoteRef.key);
+
+ // firebaseRef.child('user').on('value', (snapshot) => {
+ //   console.log('User ref changed', snapshot.val());
+ // });
+ //
+ //
+ // firebaseRef.child('user').update({
+ //   name: 'Harshith'
+ // });
+ //
+ // firebaseRef.child('app').update({
+ //   name: 'My New Task'
+ // });
 
 // var logData = (snapshot) => {
 //   console.log('Got value', snapshot.val());
