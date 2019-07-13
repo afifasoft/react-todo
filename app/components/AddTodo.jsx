@@ -29,11 +29,11 @@ export var AddTodo = createReactClass({
           <input type="text" ref="todoText" placeholder="What do you need to do"/>
 
           <button className="button expanded">Create Task</button>
-          <Button variant="contained" color="primary">Click</Button>
-        </form>
+                </form>
       </div>
     );
   }
 });
 
 export default connect()(AddTodo);
+//  <Button variant="contained" color="primary">Click</Button>

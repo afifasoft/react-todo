@@ -25,17 +25,30 @@ var firebaseConfig = {
    }
  });
 
-var logData = (snapshot) => {
-  console.log('Got value', snapshot.val());
-};
+ firebaseRef.child('user').on('value', (snapshot) => {
+   console.log('User ref changed', snapshot.val());
+ });
 
-firebaseRef.on('value',logData);
 
-firebaseRef.off();
+ firebaseRef.child('user').update({
+   name: 'Harshith'
+ });
 
-firebaseRef.update({
-  isRunning: false
-});
+ firebaseRef.child('app').update({
+   name: 'My New Task'
+ });
+
+// var logData = (snapshot) => {
+//   console.log('Got value', snapshot.val());
+// };
+//
+// firebaseRef.on('value',logData);
+//
+// firebaseRef.off();
+//
+// firebaseRef.update({
+//   isRunning: false
+// });
 
 
 // firebaseRef.once('value').then((snapshot) => {
