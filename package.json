@@ -21,7 +21,7 @@
     "karma-mocha-reporter": "^2.2.5",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.1",
-    "mocha": "^2.5.3",
+    "mocha": "^10.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^3.2.1"
